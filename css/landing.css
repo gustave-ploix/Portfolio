@@ -104,58 +104,75 @@ main .appearCard.loaded {
   }
 }
 
-main .appearCard .presentation {
+main .appearCard .presentation .presentationText {
   -webkit-transform: translateX(-550px);
           transform: translateX(-550px);
+}
+
+main .appearCard .presentation .presentationText:nth-child(1) {
   -webkit-transition: -webkit-transform 0.5s ease-in-out 500ms;
   transition: -webkit-transform 0.5s ease-in-out 500ms;
   transition: transform 0.5s ease-in-out 500ms;
   transition: transform 0.5s ease-in-out 500ms, -webkit-transform 0.5s ease-in-out 500ms;
 }
 
-main .appearCard .presentation h1 {
+main .appearCard .presentation .presentationText:nth-child(2) {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 1000ms;
+  transition: -webkit-transform 0.5s ease-in-out 1000ms;
+  transition: transform 0.5s ease-in-out 1000ms;
+  transition: transform 0.5s ease-in-out 1000ms, -webkit-transform 0.5s ease-in-out 1000ms;
+}
+
+main .appearCard .presentation .presentationText:nth-child(3) {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 1500ms;
+  transition: -webkit-transform 0.5s ease-in-out 1500ms;
+  transition: transform 0.5s ease-in-out 1500ms;
+  transition: transform 0.5s ease-in-out 1500ms, -webkit-transform 0.5s ease-in-out 1500ms;
+}
+
+main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
   color: #5e0b15;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 122px;
   font-weight: 100;
 }
 
-main .appearCard .presentation h1 span {
+main .appearCard .presentation .presentationText:nth-child(1) span, main .appearCard .presentation .presentationText:nth-child(2) span {
   font-weight: 300;
   color: #053c5e;
 }
 
 @media (max-width: 590px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 100px;
   }
 }
 
 @media (max-width: 430px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 80px;
   }
 }
 
 @media (max-height: 530px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 100px;
   }
 }
 
 @media (max-height: 475px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 80px;
   }
 }
 
 @media (max-height: 420px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 70px;
   }
 }
 
-main .appearCard .presentation p {
+main .appearCard .presentation .presentationText:nth-child(3) {
   color: #053c5e;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 100;
@@ -163,18 +180,18 @@ main .appearCard .presentation p {
   margin-left: 10px;
 }
 
-main .appearCard .presentation p span {
+main .appearCard .presentation .presentationText:nth-child(3) span {
   font-weight: 300;
   color: #053c5e;
 }
 
 @media (max-width: 590px) {
-  main .appearCard .presentation p {
+  main .appearCard .presentation .presentationText:nth-child(3) {
     font-size: 20px;
   }
 }
 
-main .appearCard .presentation.appear {
+main .appearCard .presentation .presentationText.appear {
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
 }

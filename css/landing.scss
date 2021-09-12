@@ -86,68 +86,89 @@ main {
     // reponsive position end-------------------------
 
     .presentation {
-      transform: translateX(-550px);
+      .presentationText {
+        transform: translateX(-550px);
 
-      transition: transform 0.5s ease-in-out 500ms;
 
-      h1 {
-        color: $textColor;
-        font-family: $font;
-        font-size: 122px;
-        font-weight: 100;
+        // let appear "GUSTAVE" or the first H1
+        &:nth-child(1) {
+          transition: transform 0.5s ease-in-out 500ms;
+        }
+        
+        // let appear "PLOIX" or the seccond H1
+        &:nth-child(2) {
+          transition: transform 0.5s ease-in-out 1000ms;
+        }
 
-        span {
-          font-weight: 300;
+        // let appear "dev front" or the p
+        &:nth-child(3) {
+          transition: transform 0.5s ease-in-out 1500ms;
+        }
+        
+
+        // affects the two H1
+        &:nth-child(1), &:nth-child(2) {
+
+          color: $textColor;
+          font-family: $font;
+          font-size: 122px;
+          font-weight: 100;
+
+          span {
+            font-weight: 300;
+            color: $spanBarColor;
+          }
+
+          // responsive h1 ---------------------------
+          // width
+          @media (max-width: 590px) {
+            font-size: 100px;
+          }
+
+          @media (max-width: 430px) {
+            font-size: 80px;
+          }
+
+          // height
+          @media (max-height: 530px) {
+            font-size: 100px;
+          }
+          @media (max-height: 475px) {
+            font-size: 80px;
+          }
+          @media (max-height: 420px) {
+            font-size: 70px;
+          }
+          // responsive h1 end------------------------
+        }
+
+
+        // affects the p
+        &:nth-child(3) {
           color: $spanBarColor;
+          font-family: $font;
+          font-weight: 100;
+          font-size: 30px;
+          margin-left: 10px;
+
+          span {
+            font-weight: 300;
+            color: $spanBarColor;
+          }
+
+          // responsive p -----------------------
+          @media (max-width: 590px) {
+            font-size: 20px;
+          }
+          // reponsive p end ---------------------
         }
 
-        // responsive h1 ---------------------------
-        // width
-        @media (max-width: 590px) {
-          font-size: 100px;
+        // animation ----------------------------
+        &.appear {
+          transform: translateX(0px);
         }
-
-        @media (max-width: 430px) {
-          font-size: 80px;
-        }
-
-        // height
-        @media (max-height: 530px) {
-          font-size: 100px;
-        }
-        @media (max-height: 475px) {
-          font-size: 80px;
-        }
-        @media (max-height: 420px) {
-          font-size: 70px;
-        }
-        // responsive h1 end------------------------
+        // animation end ------------------------
       }
-
-      p {
-        color: $spanBarColor;
-        font-family: $font;
-        font-weight: 100;
-        font-size: 30px;
-        margin-left: 10px;
-
-        span {
-          font-weight: 300;
-          color: $spanBarColor;
-        }
-
-        // responsive p -----------------------
-        @media (max-width: 590px) {
-          font-size: 20px;
-        }
-        // reponsive p end ---------------------
-      }
-
-      // animation ----------------------------
-      &.appear {
-        transform: translateX(0px);
-      }
-      // animation end ------------------------
     }
   }
 }
