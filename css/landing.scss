@@ -23,65 +23,64 @@ body {
 
 main {
   .appearCard {
-
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     border-left: 5px solid black;
+
     overflow: hidden;
+
     height: 0px;
+
     transition: height 0.5s ease-in-out;
 
     // animation card ---------------------
     &.loaded {
       height: 340px !important;
 
-      // responsive animation ------------------
+      // responsive loaded ------------------
       @media (max-width: 590px) {
         height: 275px !important;
       }
 
-      @media(max-width: 430px) {
+      @media (max-width: 430px) {
         height: 230px !important;
       }
 
-      @media(max-height: 530px) {
+      @media (max-height: 530px) {
         height: 280px !important;
       }
 
-      @media(max-height: 475px) {
+      @media (max-height: 475px) {
         height: 250px !important;
       }
 
-      @media(max-height: 420px) {
+      @media (max-height: 420px) {
         height: 210px !important;
       }
-      @media(max-height: 330px) {
+      @media (max-height: 330px) {
         height: 190px !important;
       }
-      // responsive animation end------------------
-    
+      // responsive loaded end------------------
     }
     // animation card end------------------
 
-
     // responsive position-------------------------
-    @media(max-height: 690px) {
+    @media (max-height: 690px) {
       position: relative;
       bottom: 50px;
     }
 
-    @media(max-height: 580px) {
+    @media (max-height: 580px) {
       bottom: 70px;
     }
-    @media(max-height: 360px) {
+    @media (max-height: 360px) {
       bottom: 55px;
     }
     // reponsive position end-------------------------
 
     .presentation {
-
       transform: translateX(-550px);
 
       transition: transform 0.5s ease-in-out 500ms;
@@ -96,6 +95,7 @@ main {
         }
 
         // responsive h1 ---------------------------
+        // width
         @media (max-width: 590px) {
           font-size: 100px;
         }
@@ -105,13 +105,13 @@ main {
         }
 
         // height
-        @media(max-height: 530px) {
+        @media (max-height: 530px) {
           font-size: 100px;
         }
-        @media(max-height: 475px) {
+        @media (max-height: 475px) {
           font-size: 80px;
         }
-        @media(max-height: 420px) {
+        @media (max-height: 420px) {
           font-size: 70px;
         }
         // responsive h1 end------------------------
@@ -128,19 +128,18 @@ main {
         }
 
         // responsive p -----------------------
-
         @media (max-width: 590px) {
           font-size: 20px;
         }
         // reponsive p end ---------------------
       }
+
       // animation ----------------------------
-        &.appear {
-          transform: translateX(0px) ;
-        }
+      &.appear {
+        transform: translateX(0px);
+      }
       // animation end ------------------------
     }
-
   }
 }
 
@@ -159,7 +158,6 @@ main {
   justify-content: center;
 
   cursor: pointer;
-  
 
   background-color: lightgray;
 
@@ -167,7 +165,7 @@ main {
     bottom 3s ease-in-out;
 
   &:hover {
-    // border-radius: 50% 50% 0% 50%;
+    //btn principal
     background-color: $btnColor;
 
     & > p {
@@ -176,6 +174,7 @@ main {
   }
 
   p {
+    // < btn
     font-size: 1.2em;
     font-family: $font;
     transition: color 0.2s ease-in-out;
@@ -185,14 +184,13 @@ main {
     @media (max-width: 440px) {
       font-size: 1em;
     }
-    @media(max-height: 520px) {
+    @media (max-height: 520px) {
       font-size: 1em;
     }
     // responsive end--------------
   }
 
-  // responsive -----------------------------------
-
+  // responsive btn principal-----------------------------------
   @media (max-height: 835px) {
     bottom: 50px;
   }
@@ -201,21 +199,14 @@ main {
     width: 75px;
     height: 75px;
   }
-  
 
   // height
-  @media(max-height: 520px) {
+  @media (max-height: 520px) {
     width: 75px;
     height: 75px;
     bottom: 25px;
   }
-  // responsive end -------------------------------
-
-  // apparition transition ------------------------
-
- 
-
-  // apparition transition end --------------------
+  // responsive btn principal end -------------------------------
 
   // page transition ------------------------------
   &.transition {
