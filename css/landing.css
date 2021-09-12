@@ -27,50 +27,156 @@ body {
   overflow: hidden;
 }
 
-main {
-  width: 100%;
-  height: 50%;
-  z-index: -100;
-  -webkit-transition: height 2s ease-in-out 2000ms;
-  transition: height 2s ease-in-out 2000ms;
-}
-
-main.pageTransition {
-  height: 1px;
-}
-
-main #appearCard {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+main .appearCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-left: 5px solid black;
+  overflow: hidden;
+  height: 0px;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 
-main #appearCard h1 {
+main .appearCard.loaded {
+  height: 340px !important;
+}
+
+@media (max-width: 590px) {
+  main .appearCard.loaded {
+    height: 275px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  main .appearCard.loaded {
+    height: 230px !important;
+  }
+}
+
+@media (max-height: 530px) {
+  main .appearCard.loaded {
+    height: 280px !important;
+  }
+}
+
+@media (max-height: 475px) {
+  main .appearCard.loaded {
+    height: 250px !important;
+  }
+}
+
+@media (max-height: 420px) {
+  main .appearCard.loaded {
+    height: 210px !important;
+  }
+}
+
+@media (max-height: 330px) {
+  main .appearCard.loaded {
+    height: 190px !important;
+  }
+}
+
+@media (max-height: 690px) {
+  main .appearCard {
+    position: relative;
+    bottom: 50px;
+  }
+}
+
+@media (max-height: 580px) {
+  main .appearCard {
+    bottom: 70px;
+  }
+}
+
+@media (max-height: 360px) {
+  main .appearCard {
+    bottom: 55px;
+  }
+}
+
+main .appearCard .presentation {
+  -webkit-transform: translateX(-550px);
+          transform: translateX(-550px);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 500ms;
+  transition: -webkit-transform 0.5s ease-in-out 500ms;
+  transition: transform 0.5s ease-in-out 500ms;
+  transition: transform 0.5s ease-in-out 500ms, -webkit-transform 0.5s ease-in-out 500ms;
+}
+
+main .appearCard .presentation h1 {
+  font-family: "Cabinet Grotesk", sans-serif;
   font-size: 122px;
-  font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 100;
 }
 
-main #appearCard h1 span {
-  font-weight: 400;
+main .appearCard .presentation h1 span {
+  font-weight: 300;
 }
 
-main #appearCard p {
+@media (max-width: 590px) {
+  main .appearCard .presentation h1 {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 430px) {
+  main .appearCard .presentation h1 {
+    font-size: 80px;
+  }
+}
+
+@media (max-height: 530px) {
+  main .appearCard .presentation h1 {
+    font-size: 100px;
+  }
+}
+
+@media (max-height: 475px) {
+  main .appearCard .presentation h1 {
+    font-size: 80px;
+  }
+}
+
+@media (max-height: 420px) {
+  main .appearCard .presentation h1 {
+    font-size: 70px;
+  }
+}
+
+main .appearCard .presentation p {
   font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 40px;
   font-weight: 100;
+  font-size: 30px;
+  margin-left: 10px;
 }
 
-main #appearCard p span {
-  font-weight: 350;
+main .appearCard .presentation p span {
+  font-weight: 300;
+}
+
+@media (max-width: 590px) {
+  main .appearCard .presentation p {
+    font-size: 20px;
+  }
+}
+
+main .appearCard .presentation.appear {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 .rond {
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   width: 100px;
   height: 100px;
   border: 1px solid lightgray;
@@ -88,6 +194,54 @@ main #appearCard p span {
   background-color: lightgray;
   -webkit-transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out, bottom 3s ease-in-out;
   transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out, bottom 3s ease-in-out;
+}
+
+.rond:hover {
+  background-color: #e05263;
+}
+
+.rond:hover > p {
+  color: white;
+}
+
+.rond p {
+  font-size: 1.2em;
+  font-family: "Cabinet Grotesk", sans-serif;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+@media (max-width: 440px) {
+  .rond p {
+    font-size: 1em;
+  }
+}
+
+@media (max-height: 520px) {
+  .rond p {
+    font-size: 1em;
+  }
+}
+
+@media (max-height: 835px) {
+  .rond {
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 440px) {
+  .rond {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-height: 520px) {
+  .rond {
+    width: 75px;
+    height: 75px;
+    bottom: 25px;
+  }
 }
 
 .rond.transition {
@@ -157,20 +311,5 @@ main #appearCard p span {
     bottom: -300px;
     height: 200vh;
   }
-}
-
-.rond:hover {
-  background-color: #e05263;
-}
-
-.rond:hover > p {
-  color: white;
-}
-
-.rond p {
-  font-size: 1.2em;
-  font-family: "Cabinet Grotesk", sans-serif;
-  -webkit-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
 }
 /*# sourceMappingURL=landing.css.map */
