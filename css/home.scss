@@ -5,11 +5,18 @@
     list-style: none;
 }
 
+$font: "Cabinet Grotesk", sans-serif;
+
+$bgColor: #f78764;
+$textColor: #5e0b15;
+$spanBarColor: #053c5e;
+
+$notSetColor: #e6ebe0;
 
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #e05263;
+    background-color: $bgColor;
     display: flex;
     align-items: center;
     justify-content: center;
