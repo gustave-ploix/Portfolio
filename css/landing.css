@@ -8,6 +8,7 @@
 }
 
 body {
+  background-color: #e6ebe0;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -37,7 +38,7 @@ main .appearCard {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-left: 5px solid black;
+  border-left: 5px solid #053c5e;
   overflow: hidden;
   height: 0px;
   -webkit-transition: height 0.5s ease-in-out;
@@ -113,6 +114,7 @@ main .appearCard .presentation {
 }
 
 main .appearCard .presentation h1 {
+  color: #5e0b15;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 122px;
   font-weight: 100;
@@ -120,6 +122,7 @@ main .appearCard .presentation h1 {
 
 main .appearCard .presentation h1 span {
   font-weight: 300;
+  color: #053c5e;
 }
 
 @media (max-width: 590px) {
@@ -153,6 +156,7 @@ main .appearCard .presentation h1 span {
 }
 
 main .appearCard .presentation p {
+  color: #053c5e;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 100;
   font-size: 30px;
@@ -161,6 +165,7 @@ main .appearCard .presentation p {
 
 main .appearCard .presentation p span {
   font-weight: 300;
+  color: #053c5e;
 }
 
 @media (max-width: 590px) {
@@ -179,7 +184,6 @@ main .appearCard .presentation.appear {
   bottom: 100px;
   width: 100px;
   height: 100px;
-  border: 1px solid lightgray;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -191,24 +195,17 @@ main .appearCard .presentation.appear {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-  background-color: lightgray;
-  -webkit-transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out, bottom 3s ease-in-out;
-  transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out, bottom 3s ease-in-out;
-}
-
-.rond:hover {
-  background-color: #e05263;
-}
-
-.rond:hover > p {
-  color: white;
+  background-color: #e6ebe0;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .rond p {
+  color: #e6ebe0;
   font-size: 1.2em;
   font-family: "Cabinet Grotesk", sans-serif;
-  -webkit-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 @media (max-width: 440px) {
@@ -244,26 +241,38 @@ main .appearCard .presentation.appear {
   }
 }
 
+.rond.comeUp {
+  background-color: #dae1d1;
+}
+
+.rond.comeUp:hover {
+  background-color: #f78764;
+}
+
+.rond.comeUp:hover > p {
+  color: #5e0b15;
+}
+
 .rond.transition {
-  background-color: #e05263;
-  bottom: 200px;
+  background-color: #f78764;
+  bottom: 100px;
   -webkit-animation: forwards position 0.2s ease-in-out, forwards width 0.5s ease-in-out 200ms, height forwards 1s ease-in-out 700ms;
           animation: forwards position 0.2s ease-in-out, forwards width 0.5s ease-in-out 200ms, height forwards 1s ease-in-out 700ms;
 }
 
 .rond.transition p {
-  color: #e05263;
+  color: #f78764;
 }
 
 .rond.transition:hover > p {
-  color: #e05263;
+  color: #f78764;
 }
 
 @-webkit-keyframes position {
   from {
   }
   to {
-    bottom: 0px;
+    bottom: -20px;
   }
 }
 
@@ -271,7 +280,7 @@ main .appearCard .presentation.appear {
   from {
   }
   to {
-    bottom: 0px;
+    bottom: -20px;
   }
 }
 
