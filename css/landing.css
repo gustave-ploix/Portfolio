@@ -8,6 +8,7 @@
 }
 
 body {
+  background-color: #e6ebe0;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -37,7 +38,7 @@ main .appearCard {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-left: 5px solid black;
+  border-left: 5px solid #053c5e;
   overflow: hidden;
   height: 0px;
   -webkit-transition: height 0.5s ease-in-out;
@@ -103,73 +104,94 @@ main .appearCard.loaded {
   }
 }
 
-main .appearCard .presentation {
+main .appearCard .presentation .presentationText {
   -webkit-transform: translateX(-550px);
           transform: translateX(-550px);
+}
+
+main .appearCard .presentation .presentationText:nth-child(1) {
   -webkit-transition: -webkit-transform 0.5s ease-in-out 500ms;
   transition: -webkit-transform 0.5s ease-in-out 500ms;
   transition: transform 0.5s ease-in-out 500ms;
   transition: transform 0.5s ease-in-out 500ms, -webkit-transform 0.5s ease-in-out 500ms;
 }
 
-main .appearCard .presentation h1 {
+main .appearCard .presentation .presentationText:nth-child(2) {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 1000ms;
+  transition: -webkit-transform 0.5s ease-in-out 1000ms;
+  transition: transform 0.5s ease-in-out 1000ms;
+  transition: transform 0.5s ease-in-out 1000ms, -webkit-transform 0.5s ease-in-out 1000ms;
+}
+
+main .appearCard .presentation .presentationText:nth-child(3) {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 1500ms;
+  transition: -webkit-transform 0.5s ease-in-out 1500ms;
+  transition: transform 0.5s ease-in-out 1500ms;
+  transition: transform 0.5s ease-in-out 1500ms, -webkit-transform 0.5s ease-in-out 1500ms;
+}
+
+main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
+  color: #5e0b15;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 122px;
   font-weight: 100;
 }
 
-main .appearCard .presentation h1 span {
+main .appearCard .presentation .presentationText:nth-child(1) span, main .appearCard .presentation .presentationText:nth-child(2) span {
   font-weight: 300;
+  color: #053c5e;
 }
 
 @media (max-width: 590px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 100px;
   }
 }
 
 @media (max-width: 430px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 80px;
   }
 }
 
 @media (max-height: 530px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 100px;
   }
 }
 
 @media (max-height: 475px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 80px;
   }
 }
 
 @media (max-height: 420px) {
-  main .appearCard .presentation h1 {
+  main .appearCard .presentation .presentationText:nth-child(1), main .appearCard .presentation .presentationText:nth-child(2) {
     font-size: 70px;
   }
 }
 
-main .appearCard .presentation p {
+main .appearCard .presentation .presentationText:nth-child(3) {
+  color: #053c5e;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 100;
   font-size: 30px;
   margin-left: 10px;
 }
 
-main .appearCard .presentation p span {
+main .appearCard .presentation .presentationText:nth-child(3) span {
   font-weight: 300;
+  color: #053c5e;
 }
 
 @media (max-width: 590px) {
-  main .appearCard .presentation p {
+  main .appearCard .presentation .presentationText:nth-child(3) {
     font-size: 20px;
   }
 }
 
-main .appearCard .presentation.appear {
+main .appearCard .presentation .presentationText.appear {
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
 }
@@ -179,7 +201,6 @@ main .appearCard .presentation.appear {
   bottom: 100px;
   width: 100px;
   height: 100px;
-  border: 1px solid lightgray;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -191,24 +212,17 @@ main .appearCard .presentation.appear {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-  background-color: lightgray;
-  -webkit-transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out, bottom 3s ease-in-out;
-  transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out, bottom 3s ease-in-out;
-}
-
-.rond:hover {
-  background-color: #e05263;
-}
-
-.rond:hover > p {
-  color: white;
+  background-color: #e6ebe0;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .rond p {
+  color: #e6ebe0;
   font-size: 1.2em;
   font-family: "Cabinet Grotesk", sans-serif;
-  -webkit-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 @media (max-width: 440px) {
@@ -244,26 +258,38 @@ main .appearCard .presentation.appear {
   }
 }
 
+.rond.comeUp {
+  background-color: #dae1d1;
+}
+
+.rond.comeUp:hover {
+  background-color: #f78764;
+}
+
+.rond.comeUp:hover > p {
+  color: #5e0b15;
+}
+
 .rond.transition {
-  background-color: #e05263;
-  bottom: 200px;
+  background-color: #f78764;
+  bottom: 100px;
   -webkit-animation: forwards position 0.2s ease-in-out, forwards width 0.5s ease-in-out 200ms, height forwards 1s ease-in-out 700ms;
           animation: forwards position 0.2s ease-in-out, forwards width 0.5s ease-in-out 200ms, height forwards 1s ease-in-out 700ms;
 }
 
 .rond.transition p {
-  color: #e05263;
+  color: #f78764;
 }
 
 .rond.transition:hover > p {
-  color: #e05263;
+  color: #f78764;
 }
 
 @-webkit-keyframes position {
   from {
   }
   to {
-    bottom: 0px;
+    bottom: -20px;
   }
 }
 
@@ -271,7 +297,7 @@ main .appearCard .presentation.appear {
   from {
   }
   to {
-    bottom: 0px;
+    bottom: -20px;
   }
 }
 

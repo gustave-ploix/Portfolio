@@ -8,9 +8,14 @@
 }
 
 $font: "Cabinet Grotesk", sans-serif;
-$btnColor: #e05263;
+
+$btnColor: #f78764;
+$bgColor: #e6ebe0;
+$textColor: #5e0b15;
+$spanBarColor: #053c5e;
 
 body {
+  background-color: $bgColor;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -27,7 +32,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    border-left: 5px solid black;
+    border-left: 5px solid $spanBarColor;
 
     overflow: hidden;
 
@@ -81,64 +86,89 @@ main {
     // reponsive position end-------------------------
 
     .presentation {
-      transform: translateX(-550px);
+      .presentationText {
+        transform: translateX(-550px);
 
-      transition: transform 0.5s ease-in-out 500ms;
 
-      h1 {
-        font-family: $font;
-        font-size: 122px;
-        font-weight: 100;
-
-        span {
-          font-weight: 300;
+        // let appear "GUSTAVE" or the first H1
+        &:nth-child(1) {
+          transition: transform 0.5s ease-in-out 500ms;
+        }
+        
+        // let appear "PLOIX" or the seccond H1
+        &:nth-child(2) {
+          transition: transform 0.5s ease-in-out 1000ms;
         }
 
-        // responsive h1 ---------------------------
-        // width
-        @media (max-width: 590px) {
-          font-size: 100px;
+        // let appear "dev front" or the p
+        &:nth-child(3) {
+          transition: transform 0.5s ease-in-out 1500ms;
+        }
+        
+
+        // affects the two H1
+        &:nth-child(1), &:nth-child(2) {
+
+          color: $textColor;
+          font-family: $font;
+          font-size: 122px;
+          font-weight: 100;
+
+          span {
+            font-weight: 300;
+            color: $spanBarColor;
+          }
+
+          // responsive h1 ---------------------------
+          // width
+          @media (max-width: 590px) {
+            font-size: 100px;
+          }
+
+          @media (max-width: 430px) {
+            font-size: 80px;
+          }
+
+          // height
+          @media (max-height: 530px) {
+            font-size: 100px;
+          }
+          @media (max-height: 475px) {
+            font-size: 80px;
+          }
+          @media (max-height: 420px) {
+            font-size: 70px;
+          }
+          // responsive h1 end------------------------
         }
 
-        @media (max-width: 430px) {
-          font-size: 80px;
+
+        // affects the p
+        &:nth-child(3) {
+          color: $spanBarColor;
+          font-family: $font;
+          font-weight: 100;
+          font-size: 30px;
+          margin-left: 10px;
+
+          span {
+            font-weight: 300;
+            color: $spanBarColor;
+          }
+
+          // responsive p -----------------------
+          @media (max-width: 590px) {
+            font-size: 20px;
+          }
+          // reponsive p end ---------------------
         }
 
-        // height
-        @media (max-height: 530px) {
-          font-size: 100px;
+        // animation ----------------------------
+        &.appear {
+          transform: translateX(0px);
         }
-        @media (max-height: 475px) {
-          font-size: 80px;
-        }
-        @media (max-height: 420px) {
-          font-size: 70px;
-        }
-        // responsive h1 end------------------------
+        // animation end ------------------------
       }
-
-      p {
-        font-family: $font;
-        font-weight: 100;
-        font-size: 30px;
-        margin-left: 10px;
-
-        span {
-          font-weight: 300;
-        }
-
-        // responsive p -----------------------
-        @media (max-width: 590px) {
-          font-size: 20px;
-        }
-        // reponsive p end ---------------------
-      }
-
-      // animation ----------------------------
-      &.appear {
-        transform: translateX(0px);
-      }
-      // animation end ------------------------
     }
   }
 }
@@ -150,7 +180,7 @@ main {
   width: 100px;
   height: 100px;
 
-  border: 1px solid lightgray;
+  // border: 1px solid darken($bgColor: 0);
   border-radius: 50%;
 
   display: flex;
@@ -159,25 +189,16 @@ main {
 
   cursor: pointer;
 
-  background-color: lightgray;
+  background-color: $bgColor;
 
-  transition: border-radius 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    bottom 3s ease-in-out;
-
-  &:hover {
-    //btn principal
-    background-color: $btnColor;
-
-    & > p {
-      color: white;
-    }
-  }
+  transition: background-color 0.3s ease-in-out;
 
   p {
     // < btn
+    color: $bgColor;
     font-size: 1.2em;
     font-family: $font;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     // responsive------------------
 
@@ -208,11 +229,28 @@ main {
   }
   // responsive btn principal end -------------------------------
 
+  // apparition to the page-----------------------------------
+
+  &.comeUp {
+    background-color: darken($bgColor, 5%);
+
+    &:hover {
+      //btn principal
+      background-color: $btnColor;
+
+      & > p {
+        color: $textColor;
+      }
+    }
+  }
+
+  // apparition to the page end-------------------------------
+
   // page transition ------------------------------
   &.transition {
-    background-color: #e05263;
+    background-color: $btnColor;
 
-    bottom: 200px;
+    bottom: 100px;
 
     animation: forwards position 0.2s ease-in-out,
       forwards width 0.5s ease-in-out 200ms,
@@ -231,7 +269,7 @@ main {
     from {
     }
     to {
-      bottom: 0px;
+      bottom: -20px;
     }
   }
 
