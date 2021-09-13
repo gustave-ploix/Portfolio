@@ -109,7 +109,7 @@ body .headPage .texts .card p {
 
 body .headPage .cta {
   position: absolute;
-  bottom: 25px;
+  bottom: 0px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
