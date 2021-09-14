@@ -17,14 +17,18 @@ $notSetColor: #e6ebe0;
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: 170vh;
+  // overflow: hidden;
   background-color: $bgColor;
 
   overflow-x: hidden;
 
   .headPage {
     width: 99%;
-    height: 170%;
+    height: 100%;
+
+
+    // border-bottom: 5px solid blue;
 
     position: relative;
     // left: 5px;
@@ -36,7 +40,7 @@ body {
 
     background-color: $bgColor;
 
-    border-radius: 50%;
+    border-radius: 50% 50% ;
 
     transform: translateY(150vh);
     
@@ -45,6 +49,7 @@ body {
 
     display: flex;
     overflow-x: hidden;
+    // overflow-y: scroll;
 
     &.comesUp {
       animation: goesUp 0.5s ease-in-out forwards;
@@ -64,6 +69,7 @@ body {
       min-width: 10px;
       height: 150%;
       border-left: 2px solid $spanBarColor;
+      z-index: -10;
 
       &.colored {
         background-color: $spanBarColor;
@@ -87,20 +93,27 @@ body {
       justify-content: space-around;
 
       .card {
-        width: 1000px;
+        width: 900px;
 
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         z-index: 0;
+        // border: 1px solid red;
 
         transform: translate(-50%, -50%);
-        p {
+        h1 {
           text-align: center;
           font-size: 64px;
+          font-weight: 100;
           color: $bgColor;
           font-family: $font;
           font-weight: 200;
+
+          span {
+            font-weight: 400;
+            color: darken($bgColor, 5%);
+          }
         }
       }
     }
@@ -109,10 +122,34 @@ body {
       position: absolute;
       bottom: 0px;
       left: 50%;
+
+      z-index: 200;
+      
       transform: translateX(-50%);
       font-size: 80px;
       font-family: $font;
       color: $spanBarColor  ;
     }
   }
+  .pushElement {
+
+    position: absolute;
+    left: 0px;
+    bottom: -70vh;
+
+    z-index: 100;
+
+    width: 100vw;
+    height: 0vh;
+
+    background-color: $bgColor;
+
+   transition: height 0.5s ease-in-out;
+
+
+    &.visible {
+      height: 100vh;
+    }
+  }
+
 }

@@ -9,17 +9,17 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: 170vh;
   background-color: #f78764;
   overflow-x: hidden;
 }
 
 body .headPage {
   width: 99%;
-  height: 170%;
+  height: 100%;
   position: relative;
   background-color: #f78764;
-  border-radius: 50%;
+  border-radius: 50% 50%;
   -webkit-transform: translateY(150vh);
           transform: translateY(150vh);
   display: -webkit-box;
@@ -59,6 +59,7 @@ body .headPage .line {
   min-width: 10px;
   height: 150%;
   border-left: 2px solid #053c5e;
+  z-index: -10;
 }
 
 body .headPage .line.colored {
@@ -90,31 +91,54 @@ body .headPage .texts {
 }
 
 body .headPage .texts .card {
-  width: 1000px;
+  width: 900px;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   z-index: 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
-body .headPage .texts .card p {
+body .headPage .texts .card h1 {
   text-align: center;
   font-size: 64px;
+  font-weight: 100;
   color: #f78764;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 200;
+}
+
+body .headPage .texts .card h1 span {
+  font-weight: 400;
+  color: #f6744c;
 }
 
 body .headPage .cta {
   position: absolute;
   bottom: 0px;
   left: 50%;
+  z-index: 200;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   font-size: 80px;
   font-family: "Cabinet Grotesk", sans-serif;
   color: #053c5e;
+}
+
+body .pushElement {
+  position: absolute;
+  left: 0px;
+  bottom: -70vh;
+  z-index: 100;
+  width: 100vw;
+  height: 0vh;
+  background-color: #f78764;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+body .pushElement.visible {
+  height: 100vh;
 }
 /*# sourceMappingURL=home.css.map */
