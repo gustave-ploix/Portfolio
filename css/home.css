@@ -5,6 +5,8 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -115,9 +117,22 @@ body .headPage .texts .card h1 span {
 }
 
 body .headPage .cta {
+  background-color: #f78764;
   position: absolute;
   bottom: 0px;
   left: 50%;
+  width: 527.5px;
+  border-top: 2px solid #053c5e;
+  border-bottom: 2px solid #053c5e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 200;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);

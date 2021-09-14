@@ -5,6 +5,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  box-sizing: border-box;
 }
 
 $font: "Cabinet Grotesk", sans-serif;
@@ -78,6 +79,8 @@ body {
 
     .texts {
 
+      
+
       z-index: 150;
 
       background-color: $spanBarColor;
@@ -119,9 +122,24 @@ body {
     }
 
     .cta {
+      // border: 1px solid blue;
+
+      background-color: $bgColor;
+
       position: absolute;
       bottom: 0px;
       left: 50%;
+
+      width: 527.5px;
+
+      border-top: 2px solid $spanBarColor;
+      border-bottom: 2px solid $spanBarColor;
+
+      // padding: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       z-index: 200;
       
