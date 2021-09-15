@@ -251,6 +251,34 @@ body {
           background-color: $bgColor;
         }
       }
+
+
+      &.full {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          color: $spanBarColor;
+        }
+        
+        p {
+          font-family: $font;
+          font-size: 90px;
+          font-weight: 600;
+          position: relative;
+          display: inline;
+          
+          
+          &::after {
+            content: "";  
+            width: 100px;
+            height: 5px;
+            background-color: black;
+          }
+        }
+      }
     }
   }
 
