@@ -149,6 +149,8 @@ body .pushElement {
   overflow-x: hidden;
   -webkit-box-shadow: 0px -16px 20px #053c5e;
           box-shadow: 0px -16px 20px #053c5e;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
   z-index: 100;
   width: 100vw;
   height: 0vh;
@@ -167,6 +169,7 @@ body .pushElement .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  scroll-snap-align: start;
 }
 
 body .pushElement .container .left {
