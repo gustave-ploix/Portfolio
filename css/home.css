@@ -262,7 +262,7 @@ body .pushElement .container.full {
 }
 
 body .pushElement .container.full a {
-  color: #053c5e;
+  color: #f6744c;
 }
 
 body .pushElement .container.full p {
@@ -273,10 +273,14 @@ body .pushElement .container.full p {
   display: inline;
 }
 
-body .pushElement .container.full p::after {
-  content: "";
-  width: 100px;
-  height: 5px;
-  background-color: black;
+body .pushElement .container.full p span {
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-transition-delay: calc(36ms * var(--delay));
+          transition-delay: calc(36ms * var(--delay));
+}
+
+body .pushElement .container.full p:hover > span {
+  color: #e9410c;
 }
 /*# sourceMappingURL=home.css.map */

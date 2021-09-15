@@ -260,7 +260,7 @@ body {
         justify-content: center;
 
         a {
-          color: $spanBarColor;
+          color: darken($bgColor, 5%);
         }
         
         p {
@@ -270,12 +270,15 @@ body {
           position: relative;
           display: inline;
           
-          
-          &::after {
-            content: "";  
-            width: 100px;
-            height: 5px;
-            background-color: black;
+          span {
+            transition: color 0.1s ease-in-out ;
+            transition-delay: calc(36ms * var(--delay));
+          }
+
+          &:hover > span {
+
+            color: darken($bgColor, 20%);
+
           }
         }
       }
