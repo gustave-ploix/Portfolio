@@ -16,17 +16,18 @@ body {
   background-color: #053c5e;
 }
 
-body .headPage {
+body section.headPage {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: hidden;
+  overflow-y: scroll;
   opacity: 0;
 }
 
-body .headPage.comesUp {
+body section.headPage.comesUp {
   -webkit-animation: forwards appearsToThePage 0.3s ease-in-out;
           animation: forwards appearsToThePage 0.3s ease-in-out;
 }
@@ -49,7 +50,7 @@ body .headPage.comesUp {
   }
 }
 
-body .headPage .line {
+body section.headPage .line {
   width: 40px;
   margin-left: 9px;
   margin-right: 9px;
@@ -57,7 +58,7 @@ body .headPage .line {
   border-left: 2px solid #f78764;
 }
 
-body .headPage .header {
+body section.headPage .header {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -75,11 +76,11 @@ body .headPage .header {
           justify-content: center;
 }
 
-body .headPage .header .card {
+body section.headPage .header .card {
   width: 880px;
 }
 
-body .headPage .header .card h1 {
+body section.headPage .header .card h1 {
   font-size: 60px;
   font-family: "Cabinet Grotesk", sans-serif;
   color: #f78764;
@@ -87,7 +88,70 @@ body .headPage .header .card h1 {
   font-weight: 200;
 }
 
-body .headPage .header .card h1 span {
+body section.headPage .header .card h1 span {
   font-weight: 500;
+}
+
+@media (max-width: 943px) {
+  body section.headPage .header .card {
+    width: 800px;
+  }
+  body section.headPage .header .card h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 821px) {
+  body section.headPage .header .card {
+    width: 700px;
+  }
+  body section.headPage .header .card h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 727px) {
+  body section.headPage .header .card {
+    width: 600px;
+  }
+  body section.headPage .header .card h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 623px) {
+  body section.headPage .header .card {
+    width: 500px;
+  }
+}
+
+@media (max-width: 521px) {
+  body section.headPage .header .card {
+    width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  body section.headPage .header .card {
+    width: 350px;
+  }
+}
+
+@media (max-width: 370px) {
+  body section.headPage .header .card {
+    width: 300px;
+  }
+}
+
+@media (max-height: 511px) {
+  body section.headPage .header .card h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-height: 405px) {
+  body section.headPage .header .card h1 {
+    font-size: 40px;
+  }
 }
 /*# sourceMappingURL=home.css.map */
