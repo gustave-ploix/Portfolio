@@ -10,277 +10,84 @@
 }
 
 body {
+  min-height: 100vh;
   width: 100vw;
-  height: 170vh;
-  background-color: #f78764;
   overflow-x: hidden;
+  background-color: #053c5e;
 }
 
 body .headPage {
-  width: 99%;
-  height: 100%;
-  position: relative;
-  background-color: #f78764;
-  border-radius: 50% 50%;
-  -webkit-transform: translateY(150vh);
-          transform: translateY(150vh);
+  width: 100%;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-x: hidden;
-}
-
-body .headPage::-webkit-scrollbar {
-  display: none;
+  opacity: 0;
 }
 
 body .headPage.comesUp {
-  -webkit-animation: goesUp 0.5s ease-in-out forwards;
-          animation: goesUp 0.5s ease-in-out forwards;
+  -webkit-animation: forwards appearsToThePage 0.3s ease-in-out;
+          animation: forwards appearsToThePage 0.3s ease-in-out;
 }
 
-@-webkit-keyframes goesUp {
+@-webkit-keyframes appearsToThePage {
   from {
+    opacity: 0;
   }
   to {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    opacity: 1;
   }
 }
 
-@keyframes goesUp {
+@keyframes appearsToThePage {
   from {
+    opacity: 0;
   }
   to {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    opacity: 1;
   }
 }
 
 body .headPage .line {
-  min-width: 10px;
-  height: 150%;
-  border-left: 2px solid #053c5e;
-  z-index: -10;
+  width: 40px;
+  margin-left: 9px;
+  margin-right: 9px;
+  height: 200vh;
+  border-left: 2px solid #f78764;
 }
 
-body .headPage .line.colored {
-  background-color: #053c5e;
-}
-
-body .headPage .texts {
-  z-index: 150;
-  background-color: #053c5e;
+body .headPage .header {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 40%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 150vh;
+  top: 0;
+  left: 0;
+  background-color: #053c5e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-body .headPage .texts .card {
-  width: 900px;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  z-index: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+body .headPage .header .card {
+  width: 880px;
 }
 
-body .headPage .texts .card h1 {
-  text-align: center;
-  font-size: 64px;
-  font-weight: 100;
-  color: #f78764;
+body .headPage .header .card h1 {
+  font-size: 60px;
   font-family: "Cabinet Grotesk", sans-serif;
+  color: #f78764;
+  text-align: center;
   font-weight: 200;
 }
 
-body .headPage .texts .card h1 span {
-  font-weight: 400;
-  color: #f6744c;
-}
-
-body .headPage .cta {
-  background-color: #f78764;
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  width: 527.5px;
-  border-top: 2px solid #053c5e;
-  border-bottom: 2px solid #053c5e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 200;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  font-size: 80px;
-  font-family: "Cabinet Grotesk", sans-serif;
-  color: #053c5e;
-}
-
-body .pushElement {
-  position: absolute;
-  left: 0px;
-  bottom: -70vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-box-shadow: 0px -16px 20px #053c5e;
-          box-shadow: 0px -16px 20px #053c5e;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-  z-index: 100;
-  width: 100vw;
-  height: 0vh;
-  background-color: #f78764;
-  -webkit-transition: height 0.8s ease-in-out;
-  transition: height 0.8s ease-in-out;
-}
-
-body .pushElement.visible {
-  height: 100vh;
-}
-
-body .pushElement .container {
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  scroll-snap-align: start;
-}
-
-body .pushElement .container .left {
-  width: 50%;
-  height: 100%;
-  background-color: #f78764;
-}
-
-body .pushElement .container .left img {
-  width: 100%;
-}
-
-body .pushElement .container .left h1 {
-  font-size: 60px;
-  font-family: "Cabinet Grotesk", sans-serif;
-}
-
-body .pushElement .container .right {
-  width: 50%;
-  height: 100%;
-  background-color: #f78764;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-body .pushElement .container .right img {
-  width: 100%;
-}
-
-body .pushElement .container .right h1 {
-  margin-top: 100px;
-  font-size: 60px;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 300;
-}
-
-body .pushElement .container .right .presentation {
-  margin: auto;
-  height: 500px;
-  width: 600px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body .pushElement .container .right .presentation p {
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 2em;
-  text-align: center;
-}
-
-body .pushElement .container:nth-child(2) .right {
-  background-color: #f78764;
-}
-
-body .pushElement .container.full {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body .pushElement .container.full a {
-  color: #f6744c;
-}
-
-body .pushElement .container.full p {
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-size: 90px;
-  font-weight: 600;
-  position: relative;
-  display: inline;
-}
-
-body .pushElement .container.full p span {
-  -webkit-transition: color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out;
-  -webkit-transition-delay: calc(36ms * var(--delay));
-          transition-delay: calc(36ms * var(--delay));
-}
-
-body .pushElement .container.full p:hover > span {
-  color: #e9410c;
+body .headPage .header .card h1 span {
+  font-weight: 500;
 }
 /*# sourceMappingURL=home.css.map */

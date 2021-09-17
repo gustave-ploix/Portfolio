@@ -16,273 +16,88 @@ $spanBarColor: #053c5e;
 
 $notSetColor: #e6ebe0;
 
+$gradient: linear-gradient(0deg, rgba(247,135,100,1), rgba(5,60,94,1) );
+
+
+
 body {
+  min-height: 100vh;
   width: 100vw;
-  height: 170vh;
-  // overflow: hidden;
-  background-color: $bgColor;
 
   overflow-x: hidden;
 
+  background-color: $spanBarColor;
+
+
   .headPage {
-    width: 99%;
-    height: 100%;
-
-
-    // border-bottom: 5px solid blue;
-
-    position: relative;
-    // left: 5px;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-
-    background-color: $bgColor;
-
-    border-radius: 50% 50% ;
-
-    transform: translateY(150vh);
-    
-    // position: relative;
-    // right: 20px;
+    width: 100%;
+    min-height: 100vh;
 
     display: flex;
+    
     overflow-x: hidden;
-    // overflow-y: scroll;
+
+    // transition  between the landing page and this page------------------
+
+    opacity: 0;
 
     &.comesUp {
-      animation: goesUp 0.5s ease-in-out forwards;
+      animation: forwards appearsToThePage 0.3s ease-in-out;
     }
 
-    // animate the transition between the landing page and this page
-    @keyframes goesUp {
+    @keyframes appearsToThePage {
       from {
+        opacity: 0;
       }
       to {
-        transform: translateY(0px);
+        opacity: 1;
       }
     }
-    // animate the transition end
 
+    // transition end -----------------------------------------------------
+
+    // hundred of vertical lines doing an optical effect
     .line {
-      min-width: 10px;
-      height: 150%;
-      border-left: 2px solid $spanBarColor;
-      z-index: -10;
-
-      &.colored {
-        background-color: $spanBarColor;
-      }
+      width: 40px;
+      margin-left: 9px;
+      margin-right: 9px;
+      height: 200vh;
+      border-left: 2px solid $bgColor;
     }
 
-    .texts {
 
-      
+    // principal element of the header
+    .header {
+      width: 100%;
+      height: 100%;
 
-      z-index: 150;
+
+      position: absolute;
+      top: 0;
+      left: 0;
 
       background-color: $spanBarColor;
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100vw;
-      height: 150vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-
-      .card {
-        width: 900px;
-
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        z-index: 0;
-        // border: 1px solid red;
-
-        transform: translate(-50%, -50%);
-        h1 {
-          text-align: center;
-          font-size: 64px;
-          font-weight: 100;
-          color: $bgColor;
-          font-family: $font;
-          font-weight: 200;
-
-          span {
-            font-weight: 400;
-            color: darken($bgColor, 5%);
-          }
-        }
-      }
-    }
-
-    .cta {
-      // border: 1px solid blue;
-
-      background-color: $bgColor;
-
-      position: absolute;
-      bottom: 0px;
-      left: 50%;
-
-      width: 527.5px;
-
-      border-top: 2px solid $spanBarColor;
-      border-bottom: 2px solid $spanBarColor;
-
-      // padding: 10px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      z-index: 200;
-      
-      transform: translateX(-50%);
-      font-size: 80px;
-      font-family: $font;
-      color: $spanBarColor  ;
-    }
-  }
-  .pushElement {
+      .card {
 
-    position: absolute;
-    left: 0px;
-    bottom: -70vh;
-
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    // border-top: 2px solid $spanBarColor;
-
-    box-shadow: 0px -16px 20px $spanBarColor;
-
-    scroll-snap-type: y mandatory;
-
-    z-index: 100;
-
-    width: 100vw;
-    height: 0vh;
-
-    background-color: $bgColor;
-
-   transition: height 0.8s ease-in-out;
-
-    &.visible {
-      height: 100vh;
-    }
-
-
-    .container {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-
-      scroll-snap-align: start;
-
-
-      .left {
-        width: 50%;
-        height: 100%;
-        background-color: $bgColor;
-
-        img {
-          width: 100%;
-        }
+        width: 880px;
 
         h1 {
           font-size: 60px;
-          font-family: $font
-        }
-      }
-
-      .right {
-        width: 50%;
-        height: 100%;
-        background-color: $bgColor;
-
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-
-        img{
-          width: 100%;
-        }
-
-        h1 {
-
-          margin-top: 100px;
-
-          font-size: 60px;
           font-family: $font;
-          font-weight: 300;
-        }
+          color: $bgColor;
+          text-align: center;
+          font-weight: 200;
 
-        .presentation {
-
-          margin: auto;
-
-          // border: 2px solid red;
-          height: 500px;
-          width: 600px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-between;
-
-          p {
-            font-family: $font;
-            font-size: 2em;
-            text-align: center;
-          }
-        }
-
-      }
-
-
-      &:nth-child(2) {
-        .right {
-          background-color: $bgColor;
-        }
-      }
-
-
-      &.full {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        a {
-          color: darken($bgColor, 5%);
-        }
-        
-        p {
-          font-family: $font;
-          font-size: 90px;
-          font-weight: 600;
-          position: relative;
-          display: inline;
-          
           span {
-            transition: color 0.1s ease-in-out ;
-            transition-delay: calc(36ms * var(--delay));
-          }
-
-          &:hover > span {
-
-            color: darken($bgColor, 20%);
-
+            font-weight:500;
           }
         }
       }
     }
   }
-
 }
