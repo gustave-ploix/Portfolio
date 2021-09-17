@@ -9,7 +9,7 @@
 
 $font: "Cabinet Grotesk", sans-serif;
 
-$btnColor: #f78764;
+$btnColor: #053c5e;
 $bgColor: #e6ebe0;
 $textColor: #5e0b15;
 $spanBarColor: #053c5e;
@@ -239,7 +239,7 @@ main {
       background-color: $btnColor;
 
       & > p {
-        color: $textColor;
+        color: $bgColor;
       }
     }
   }

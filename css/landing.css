@@ -263,26 +263,26 @@ main .appearCard .presentation .presentationText.appear {
 }
 
 .rond.comeUp:hover {
-  background-color: #f78764;
+  background-color: #053c5e;
 }
 
 .rond.comeUp:hover > p {
-  color: #5e0b15;
+  color: #e6ebe0;
 }
 
 .rond.transition {
-  background-color: #f78764;
+  background-color: #053c5e;
   bottom: 100px;
   -webkit-animation: forwards position 0.2s ease-in-out, forwards width 0.5s ease-in-out 200ms, height forwards 1s ease-in-out 700ms;
           animation: forwards position 0.2s ease-in-out, forwards width 0.5s ease-in-out 200ms, height forwards 1s ease-in-out 700ms;
 }
 
 .rond.transition p {
-  color: #f78764;
+  color: #053c5e;
 }
 
 .rond.transition:hover > p {
-  color: #f78764;
+  color: #053c5e;
 }
 
 @-webkit-keyframes position {
