@@ -26,18 +26,18 @@ body {
 
   background-color: $spanBarColor;
 
+  display: flex;
+  flex-direction: column;
+
+
   section {
 
-    
+    width: 100vw;
+    height: 100vh;
 
-    &.headPage {
-      width: 100%;
-      min-height: 100vh;
+    // principal element of the header
+    &.header {
 
-      display: flex;
-
-      overflow-x: hidden;
-      overflow-y: scroll;
 
       // transition  between the landing page and this page------------------
 
@@ -58,100 +58,191 @@ body {
 
       // transition end -----------------------------------------------------
 
+
+
+      width: 100%;
+      height: 100vh;
+
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+
+      background-color: $spanBarColor;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .card {
+        width: 880px;
+
+        h1 {
+          font-size: 60px;
+          font-family: $font;
+          color: $bgColor;
+          text-align: center;
+          font-weight: 200;
+
+          span {
+            font-weight: 500;
+          }
+        }
+
+        // responsive card with the introduction of the page-----------------------------------------------------
+
+        // width
+        @media (max-width: 943px) {
+          // border: 1px solid red;
+          width: 800px;
+
+          h1 {
+            font-size: 50px;
+          }
+        }
+        @media (max-width: 821px) {
+          width: 700px;
+
+          h1 {
+            font-size: 40px;
+          }
+        }
+        @media (max-width: 727px) {
+          width: 600px;
+
+          h1 {
+            font-size: 30px;
+          }
+        }
+        @media (max-width: 623px) {
+          width: 500px;
+        }
+        @media (max-width: 521px) {
+          width: 400px;
+        }
+        @media (max-width: 420px) {
+          width: 350px;
+        }
+        @media (max-width: 370px) {
+          width: 300px;
+        }
+        // width end-------------------------
+
+        // height-
+        @media (max-height: 511px) {
+          h1 {
+            font-size: 50px;
+          }
+        }
+        @media (max-height: 405px) {
+          h1 {
+            font-size: 40px;
+          }
+        }
+        // height end----------------------------
+
+        // responsive card wtih the intro of the page-----------------------------------------------------
+      } // .card
+    } // .header
+
+    &.linesSection {
+
+
+      // position: absolute;
+      // top: 100vh;
+
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      
       // hundred of vertical lines doing an optical effect
       .line {
         width: 40px;
         margin-left: 9px;
         margin-right: 9px;
-        height: 200vh;
+        height: 100vh;
         border-left: 2px solid $bgColor;
       }
 
-      // principal element of the header
-      .header {
+      h2 {
+        border: 2px solid $bgColor;
+        // border-top: 2px solid $bgColor;
+        // border-bottom: 2px solid $bgColor;
+        background-color: $spanBarColor;
+        padding: 9.4px;
+
+        font-size: 60px;
+        font-family: $font;
+        color: $bgColor;
+        
+        position: absolute;
+        top: 150%;
+        left: 49.2%;
+        transform: translate(-50%, -50%);
+
+
+      }
+    } // head page
+
+    &.pushElement {
+      .container {
         width: 100%;
         height: 100%;
 
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        background-color: $spanBarColor;
-
         display: flex;
-        align-items: center;
-        justify-content: center;
 
-        .card {
-          width: 880px;
 
-          h1 {
-            font-size: 60px;
-            font-family: $font;
-            color: $bgColor;
-            text-align: center;
-            font-weight: 200;
+        .left, .right {
+          width: 50%;
+          height: 100%;
+        
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
 
-            span {
-              font-weight: 500;
+        &.full {
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .links {
+            width: 100%;
+            height: 50%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            a {
+              color: lighten($spanBarColor, 5%);
+              
+              &:hover {
+                color: lighten($spanBarColor, 15%);
+              }
+              p {
+                font-size: 5em;
+                font-family: $font;
+                font-weight: 600;
+
+                span {
+                  transition: color 0.2s ease-in-out;
+                  transition-delay: calc(36ms * var(--delay));
+                }
+              }
+
             }
           }
+        }
+      }
+    }
 
-          // responsive card with the introduction of the page-----------------------------------------------------
-
-          // width
-          @media (max-width: 943px) {
-            // border: 1px solid red;
-            width: 800px;
-
-            h1 {
-              font-size: 50px;
-            }
-          }
-          @media (max-width: 821px) {
-            width: 700px;
-
-            h1 {
-              font-size: 40px;
-            }
-          }
-          @media (max-width: 727px) {
-            width: 600px;
-
-            h1 {
-              font-size: 30px;
-            }
-          }
-          @media (max-width: 623px) {
-            width: 500px;
-          }
-          @media (max-width: 521px) {
-            width: 400px;
-          }
-          @media (max-width: 420px) {
-            width: 350px;
-          }
-          @media (max-width: 370px) {
-            width: 300px;
-          }
-          // width end-------------------------
-
-          // height-
-          @media (max-height: 511px) {
-            h1 {
-              font-size: 50px;
-            }
-          }
-          @media (max-height: 405px) {
-            h1 {
-              font-size: 40px;
-            }
-          }
-          // height end----------------------------
-
-          // responsive card wtih the intro of the page-----------------------------------------------------
-        } // .card
-      } // .header
-    } // head page
   } //section
 } //body
+

@@ -14,20 +14,37 @@ body {
   width: 100vw;
   overflow-x: hidden;
   background-color: #053c5e;
-}
-
-body section.headPage {
-  width: 100%;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body section.headPage.comesUp {
+body section {
+  width: 100vw;
+  height: 100vh;
+}
+
+body section.header {
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #053c5e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body section.header.comesUp {
   -webkit-animation: forwards appearsToThePage 0.3s ease-in-out;
           animation: forwards appearsToThePage 0.3s ease-in-out;
 }
@@ -50,37 +67,11 @@ body section.headPage.comesUp {
   }
 }
 
-body section.headPage .line {
-  width: 40px;
-  margin-left: 9px;
-  margin-right: 9px;
-  height: 200vh;
-  border-left: 2px solid #f78764;
-}
-
-body section.headPage .header {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #053c5e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body section.headPage .header .card {
+body section.header .card {
   width: 880px;
 }
 
-body section.headPage .header .card h1 {
+body section.header .card h1 {
   font-size: 60px;
   font-family: "Cabinet Grotesk", sans-serif;
   color: #f78764;
@@ -88,70 +79,170 @@ body section.headPage .header .card h1 {
   font-weight: 200;
 }
 
-body section.headPage .header .card h1 span {
+body section.header .card h1 span {
   font-weight: 500;
 }
 
 @media (max-width: 943px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 800px;
   }
-  body section.headPage .header .card h1 {
+  body section.header .card h1 {
     font-size: 50px;
   }
 }
 
 @media (max-width: 821px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 700px;
   }
-  body section.headPage .header .card h1 {
+  body section.header .card h1 {
     font-size: 40px;
   }
 }
 
 @media (max-width: 727px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 600px;
   }
-  body section.headPage .header .card h1 {
+  body section.header .card h1 {
     font-size: 30px;
   }
 }
 
 @media (max-width: 623px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 500px;
   }
 }
 
 @media (max-width: 521px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 400px;
   }
 }
 
 @media (max-width: 420px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 350px;
   }
 }
 
 @media (max-width: 370px) {
-  body section.headPage .header .card {
+  body section.header .card {
     width: 300px;
   }
 }
 
 @media (max-height: 511px) {
-  body section.headPage .header .card h1 {
+  body section.header .card h1 {
     font-size: 50px;
   }
 }
 
 @media (max-height: 405px) {
-  body section.headPage .header .card h1 {
+  body section.header .card h1 {
     font-size: 40px;
   }
+}
+
+body section.linesSection {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body section.linesSection .line {
+  width: 40px;
+  margin-left: 9px;
+  margin-right: 9px;
+  height: 100vh;
+  border-left: 2px solid #f78764;
+}
+
+body section.linesSection h2 {
+  border: 2px solid #f78764;
+  background-color: #053c5e;
+  padding: 9.4px;
+  font-size: 60px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  color: #f78764;
+  position: absolute;
+  top: 150%;
+  left: 49.2%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body section.pushElement .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body section.pushElement .container .left, body section.pushElement .container .right {
+  width: 50%;
+  height: 100%;
+}
+
+body section.pushElement .container .left img, body section.pushElement .container .right img {
+  width: 100%;
+  height: 100%;
+}
+
+body section.pushElement .container.full {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body section.pushElement .container.full .links {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body section.pushElement .container.full .links a {
+  color: #064b76;
+}
+
+body section.pushElement .container.full .links a:hover {
+  color: #096aa7;
+}
+
+body section.pushElement .container.full .links a p {
+  font-size: 5em;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+body section.pushElement .container.full .links a p span {
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  -webkit-transition-delay: calc(36ms * var(--delay));
+          transition-delay: calc(36ms * var(--delay));
 }
 /*# sourceMappingURL=home.css.map */
